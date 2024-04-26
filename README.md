@@ -1,6 +1,5 @@
 # Pihole Firewall Setup
 Low Cost Firewall for small scale industries
-# Follow the following steps in order to seamlessly implement the Pihole Firewall
 
 ## Requirements
  - Raspberry Pi 3 or Better
@@ -9,7 +8,7 @@ Low Cost Firewall for small scale industries
  - RPI Power Cable
  - Monitor or TV with an HDMI Port
 
-# Follow Through Steps
+## Follow Through Steps
 - Download the raspberry pi imager for windows or MAC , you can find the imager from the site here https://www.raspberrypi.com/software/
 - Install the RPI Imager
 - Open the Imager Software
