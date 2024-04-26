@@ -1,4 +1,4 @@
-# Pihole
+# Pihole Firewall Setup
 Low Cost Firewall for small scale industries
 # Follow the following steps in order to seamlessly implement the Pihole Firewall
 
