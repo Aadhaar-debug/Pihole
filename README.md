@@ -20,4 +20,42 @@ Low Cost Firewall for small scale industries
 - Choose the downloaded Image of your choice.
 - Set the settings as per your requirement , you can enable the SSH Connection or you can also set up the wifi before even flashing the image to the sd card.
 - After all the settings have been configured , push the write button and it will start flashing the image onto the sd Card.
-- 
+
+## One-Step Automated Install
+
+Those who want to get started quickly and conveniently may install Pi-hole using the following command:
+
+### `curl -sSL https://install.pi-hole.net | bash`
+
+## Alternative Install Methods
+
+Piping to `bash` is [controversial](https://pi-hole.net/2016/07/25/curling-and-piping-to-bash), as it prevents you from [reading code that is about to run](https://github.com/pi-hole/pi-hole/blob/master/automated%20install/basic-install.sh) on your system. Therefore, we provide these alternative installation methods which allow code review before installation:
+
+### Method 1: Clone our repository and run
+
+```bash
+git clone --depth 1 https://github.com/pi-hole/pi-hole.git Pi-hole
+cd "Pi-hole/automated install/"
+sudo bash basic-install.sh
+```
+
+### Method 2: Manually download the installer and run
+
+```bash
+wget -O basic-install.sh https://install.pi-hole.net
+sudo bash basic-install.sh
+```
+
+### Method 3: Using Docker to deploy Pi-hole
+
+Please refer to the [Pi-hole docker repo](https://github.com/pi-hole/docker-pi-hole) to use the Official Docker Images.
+
+## [Post-install: Make your network take advantage of Pi-hole](https://docs.pi-hole.net/main/post-install/)
+
+Once the installer has been run, you will need to [configure your router to have **DHCP clients use Pi-hole as their DNS server**](https://discourse.pi-hole.net/t/how-do-i-configure-my-devices-to-use-pi-hole-as-their-dns-server/245). This router configuration will ensure that all devices connecting to your network will have content blocked without any further intervention.
+
+If your router does not support setting the DNS server, you can [use Pi-hole's built-in DHCP server](https://discourse.pi-hole.net/t/how-do-i-use-pi-holes-built-in-dhcp-server-and-why-would-i-want-to/3026); be sure to disable DHCP on your router first (if it has that feature available).
+
+As a last resort, you can manually set each device to use Pi-hole as their DNS server.
+
+-----
